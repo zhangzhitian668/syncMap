@@ -33,7 +33,12 @@ func main()  {
 	a.Store("name","zzt")
 	a.Store("email","dishitin@qq.com")
 	a.Store("age",14)
-	a.Store("age1",15)
+	a.Store("age",15)
+
+	a.Range(func(key, value interface{}) bool {
+		fmt.Println(key, value)
+		return true
+	})
 
 	fmt.Println(Len(a))
 
